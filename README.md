@@ -22,8 +22,14 @@ Program żeby działać potrzebuje:
 
 jak w poniższym zapytaniu. Zapytanie to jest zaczerpnięte z mojego programu i przesyła uzyskane dane do tabeli na serwerze mysql.
 
-sql = f"""INSERT INTO Sofar (date, Energy, Power_AC, Inverter_temperature, Voltage_AC1, Voltage_AC2, Voltage_AC3, Current_AC1, Current_AC2, Current_AC3, Power_DC1, Power_DC2, Voltage_DC1, Voltage_DC2, Current_DC1, Current_DC2, Ac_freq, Module_temperature, Insulation_imp_cath_gnd, Insulation_imp_PV1, Insulation_imp_PV2) VALUES\n 
-('{DataMysql}', '{energy_kwh}','{acpwr}', '{tinv}', '{acv1}', '{acv2}', '{acv3}', '{acv1_current}','{acv2_current}','{acv3_current}', '{dc1_power}','{dc2_power}', '{dc1_voltage}','{dc2_voltage}', '{dc1_current}', '{dc2_current}', '{ac_freq}', '{module_temperature}', '{insulation_imp_cath_gnd}', '{insulation_imp_PV1}', '{insulation_imp_PV2}');"""
+
+sql = f"""INSERT INTO Sofar (date, Energy, Power_AC, Inverter_temperature, Voltage_AC1, Voltage_AC2, Voltage_AC3,\n
+ Current_AC1, Current_AC2, Current_AC3, Power_DC1, Power_DC2, Voltage_DC1, Voltage_DC2, Current_DC1, Current_DC2, \n
+ Ac_freq, Module_temperature, Insulation_imp_cath_gnd, Insulation_imp_PV1, Insulation_imp_PV2) VALUES\n 
+ 
+('{DataMysql}', '{energy_kwh}','{acpwr}', '{tinv}', '{acv1}', '{acv2}', '{acv3}', '{acv1_current}','{acv2_current}',\n
+'{acv3_current}', '{dc1_power}','{dc2_power}', '{dc1_voltage}','{dc2_voltage}', '{dc1_current}', '{dc2_current}', \n
+'{ac_freq}', '{module_temperature}', '{insulation_imp_cath_gnd}', '{insulation_imp_PV1}', '{insulation_imp_PV2}');"""
 
 Prawdopodobnie jest możliwe wygenerowanie tabeli z mojego panelu phpmadmin 
 
@@ -59,8 +65,14 @@ To run the program needs:
 
 as in the query below. This query is taken from my program and sends the obtained data to a table on mysql server.
 
-sql = f"""INSERT INTO Sofar (date, Energy, Power_AC, Inverter_temperature, Voltage_AC1, Voltage_AC2, Voltage_AC3, Current_AC1, Current_AC2, Current_AC3, Power_DC1, Power_DC2, Voltage_DC1, Voltage_DC2, Current_DC1, Current_DC2, Ac_freq, Module_temperature, Insulation_imp_cath_gnd, Insulation_imp_PV1, Insulation_imp_PV2) VALUES\n
-('{DataMysql}', '{energy_kwh}','{acpwr}', '{tinv}', '{acv1}', '{acv2}', '{acv3}', '{acv1_current}',' {acv2_current}','{acv3_current}', '{dc1_power}','{dc2_power}', '{dc1_voltage}','{dc2_voltage}', '{dc1_current}', '{dc2_current}', '{ac_freq }', '{module_temperature}', '{insulation_imp_cath_gnd}', '{insulation_imp_PV1}', '{insulation_imp_PV2}');"""
+
+sql = f"""INSERT INTO Sofar (date, Energy, Power_AC, Inverter_temperature, Voltage_AC1, Voltage_AC2, Voltage_AC3,\n
+ Current_AC1, Current_AC2, Current_AC3, Power_DC1, Power_DC2, Voltage_DC1, Voltage_DC2, Current_DC1, Current_DC2, \n
+ Ac_freq, Module_temperature, Insulation_imp_cath_gnd, Insulation_imp_PV1, Insulation_imp_PV2) VALUES\n 
+ 
+('{DataMysql}', '{energy_kwh}','{acpwr}', '{tinv}', '{acv1}', '{acv2}', '{acv3}', '{acv1_current}','{acv2_current}',\n
+'{acv3_current}', '{dc1_power}','{dc2_power}', '{dc1_voltage}','{dc2_voltage}', '{dc1_current}', '{dc2_current}', \n
+'{ac_freq}', '{module_temperature}', '{insulation_imp_cath_gnd}', '{insulation_imp_PV1}', '{insulation_imp_PV2}');"""
 
 It's probably possible to generate a table from my phpmadmin panel
 
