@@ -4,7 +4,7 @@ English below.
 
 **Polski**
 
-Podgląd pod adresem Grafana http://poczta.duckdns.org:3000/d/eVcK7Wzgk/with-time?orgId=1&refresh=5m&from=now-24h&to=now
+Podgląd pod [adresem Grafana.](http://poczta.duckdns.org:3000/d/eVcK7Wzgk/with-time?orgId=1&refresh=5m&from=now-24h&to=now)
 
 Jest to projekt który pobiera dane, dotyczące produkcji i parametrów pracy systemu fotowoltaicznego wysłane z falownika SofarSolar na serwer solarman.com za pomocą interfejsu API. Dane są przesyłane do lokalnego serwera mysql. Skrypt jest napisany w Pythonie i wywoływany za pomocą mechanizmu Cron w interwałach co 5 minut.
 
@@ -47,7 +47,7 @@ Prawdopodobnie jest możliwe wygenerowanie tabeli z mojego panelu phpmadmin
 ---------------------------------------------
 **English**
 
-View at Grafana http://poczta.duckdns.org:3000/d/eVcK7Wzgk/with-time?orgId=1&refresh=5m&from=now-24h&to=now
+View at [Grafana adress.](http://poczta.duckdns.org:3000/d/eVcK7Wzgk/with-time?orgId=1&refresh=5m&from=now-24h&to=now) 
 
 It is a project that downloads data on the production and operating parameters of the photovoltaic system sent from the SofarSolar inverter to the solarman.com server using the API interface. The data is sent to the local mysql server. The script is written in Python and invoked using the cron mechanism at intervals of 5 minutes.
 
