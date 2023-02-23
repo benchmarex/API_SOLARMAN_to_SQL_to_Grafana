@@ -39,7 +39,10 @@ def get_token():
     token.close()
     return
 
-def odczyt_tokena_z_pliku():
+
+
+def read_token_file():
+
     #token =  open('token.txt', 'r')
 
     token = open("C:\\Users\\Marek\\PycharmProjects\\pythonProject\\token.txt", "r")
@@ -50,8 +53,8 @@ def odczyt_tokena_z_pliku():
     return (token)
 
 
-def zapytanie_o_wszystko():
-    access_token = odczyt_tokena_z_pliku()
+def asking_about_everything():
+    access_token = read_token_file()
     headers1 = {"Authorization": "bearer " + access_token, "Content-Type": "application/json; charset=utf-8",
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"}
 
@@ -61,9 +64,6 @@ def zapytanie_o_wszystko():
         jsonFile.close()
 
     deviceSn  = jsonObject['deviceSn']
-
-
-    temp2 = str(deviceSn)
 
 
     appId = jsonObject['appId']
@@ -81,9 +81,9 @@ global url
 url = 'https://api.solarmanpv.com/'
 
 
-zapytanie_o_wszystko()
+asking_about_everything()
 
-#sprawdzenie czy token jest ok
+#checking is token ok?
 
 valid_token = r1.get("success")
 print(valid_token)
@@ -94,12 +94,12 @@ if valid_token != True:
 
 
 print("Token OK. API server message: ", r1.get("msg"))
-# odpowiedz z serwera api na temat autoryzacji, brak odpowiedzi znaczy ze ejst ok
+# answer from API server, no response meaning is ok
 
-zapytanie_o_wszystko()
+asking_about_everything()
 
 
-# wyłuskanie napięć AC
+# extracting AC voltages
 
 acv1 = r1.get('dataList')[14].get('value')
 facv1 = float(acv1)
@@ -112,12 +112,12 @@ facv3 = float(acv3)
 
 # znalezienie najwyzeszej wartosci
 
-tablica = []
-tablica.append(facv1)
-tablica.append(facv2)
-tablica.append(facv3)
+table = []
+table.append(facv1)
+table.append(facv2)
+table.append(facv3)
 
-vacmax = max(tablica)
+vacmax = max(table)
 print('max voltage ', vacmax, 'V')
 
 # get AC power
@@ -126,31 +126,31 @@ acpwr = r1.get('dataList')[21].get('value')
 
 print(f"power {acpwr} W")
 
-# wyłuskanie energii w danym dniu
+# extracting day energy
 
 energy = float(r1.get('dataList')[23].get('value'))
 
 energy_kwh = str(energy)
 print('energy ', energy, ' kWh')
 
-# wyłuskanie temperatury modułu
+# extracting module temperature
 
 tinv = r1.get('dataList')[27].get('value')
 tinv = str(tinv)
 print(f"temp {tinv} °C")
 
-dc1_voltage = r1.get('dataList')[8].get('value')  # pobiera z jasona  napiecie str dc1
-dc2_voltage = r1.get('dataList')[9].get('value')  # pobiera z jasona  napiecie str dc2
+dc1_voltage = r1.get('dataList')[8].get('value')  # get jason  voltage  str dc1
+dc2_voltage = r1.get('dataList')[9].get('value')  # get jason  voltage str dc2
 
-dc1_current = r1.get('dataList')[10].get('value')  # pobiera z jasona 12 prąd str dc1
-dc2_current = r1.get('dataList')[11].get('value')  # pobiera z jasona 13 orąd str dc2
+dc1_current = r1.get('dataList')[10].get('value')  # get jason  current str dc1
+dc2_current = r1.get('dataList')[11].get('value')  # get jason  current  str dc2
 
-dc1_power = r1.get('dataList')[12].get('value')  # pobiera z jasona  moc str dc1
-dc2_power = r1.get('dataList')[13].get('value')  # pobiera z jasona  moc str dc2
+dc1_power = r1.get('dataList')[12].get('value')  # get jason  power str dc1
+dc2_power = r1.get('dataList')[13].get('value')  # get jason  power   moc str dc2
 
-acv1_current = r1.get('dataList')[17].get('value')  # pobiera z jasona  prąd ac1
-acv2_current = r1.get('dataList')[18].get('value')  # pobiera z jasona  prąd ac2
-acv3_current = r1.get('dataList')[19].get('value')  # pobiera z jasona  prąd ac3
+acv1_current = r1.get('dataList')[17].get('value')  # get jason  current ac1
+acv2_current = r1.get('dataList')[18].get('value')  # get jason  current  prąd ac2
+acv3_current = r1.get('dataList')[19].get('value')  # get jason  current prąd ac3
 
 ac_freq = r1.get('dataList')[20].get('value')  # get frequency AC
 print(f"AC Frequency {ac_freq} Hz")
@@ -180,13 +180,19 @@ print(DataMysql)
 
 #'2022-11-04 22:21:36'
 
-#tabela tworzenie
+#sql table making
 #CREATE TABLE Sofar_Base.`Sofar` (Id DOUBLE NOT NULL AUTO_INCREMENT, Date DATE NOT NULL , Time TIME NOT NULL , Energy FLOAT NOT NULL COMMENT 'kWh' , Power_AC FLOAT NOT NULL COMMENT 'kW' , Temperature FLOAT NOT NULL COMMENT 'C°' , Voltage_AC1 FLOAT NOT NULL COMMENT 'V', Voltage_AC2 FLOAT NOT NULL COMMENT 'V' , Voltage_AC3 FLOAT NOT NULL COMMENT 'V', Current_AC1 FLOAT NOT NULL COMMENT 'A' , Current_AC2 FLOAT NOT NULL COMMENT 'A', Current_AC3 FLOAT NOT NULL COMMENT 'A', Power_DC1 FLOAT NOT NULL COMMENT 'W', Power_DC2 FLOAT NOT NULL COMMENT 'W', Voltage_DC1 FLOAT NOT NULL COMMENT 'V' , Voltage_DC2 FLOAT NOT NULL COMMENT 'V' , Current_DC1 FLOAT NOT NULL COMMENT 'A' , Current_DC2 FLOAT NOT NULL COMMENT 'A',PRIMARY KEY (Id) ) ENGINE = InnoDB;
 
 #INSERT INTO `Sofar`(`date`, `Energy`) VALUES ('23-02-01 12:00:00', '3.9')
 
-sql = f"""INSERT INTO Sofar (date, Energy, Power_AC, Inverter_temperature, Voltage_AC1, Voltage_AC2, Voltage_AC3, Current_AC1, Current_AC2, Current_AC3, Power_DC1, Power_DC2, Voltage_DC1, Voltage_DC2, Current_DC1, Current_DC2, Ac_freq, Module_temperature, Insulation_imp_cath_gnd, Insulation_imp_PV1, Insulation_imp_PV2) VALUES\n 
-('{DataMysql}', '{energy_kwh}','{acpwr}', '{tinv}', '{acv1}', '{acv2}', '{acv3}', '{acv1_current}','{acv2_current}','{acv3_current}', '{dc1_power}','{dc2_power}', '{dc1_voltage}','{dc2_voltage}', '{dc1_current}', '{dc2_current}', '{ac_freq}', '{module_temperature}', '{insulation_imp_cath_gnd}', '{insulation_imp_PV1}', '{insulation_imp_PV2}');"""
+sql = f"""INSERT INTO Sofar (date, Energy, Power_AC, Inverter_temperature, Voltage_AC1, Voltage_AC2, Voltage_AC3,\n
+ Current_AC1, Current_AC2, Current_AC3, Power_DC1, Power_DC2, Voltage_DC1, Voltage_DC2, Current_DC1, Current_DC2, \n
+ Ac_freq, Module_temperature, Insulation_imp_cath_gnd, Insulation_imp_PV1, Insulation_imp_PV2) VALUES\n 
+ 
+('{DataMysql}', '{energy_kwh}','{acpwr}', '{tinv}', '{acv1}', '{acv2}', '{acv3}', '{acv1_current}','{acv2_current}',\n
+'{acv3_current}', '{dc1_power}','{dc2_power}', '{dc1_voltage}','{dc2_voltage}', '{dc1_current}', '{dc2_current}', \n
+'{ac_freq}', '{module_temperature}', '{insulation_imp_cath_gnd}', '{insulation_imp_PV1}', '{insulation_imp_PV2}');"""
+
 
 print(sql)
 
