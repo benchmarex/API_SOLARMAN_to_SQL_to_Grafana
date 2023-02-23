@@ -1,0 +1,10 @@
+{
+      "appId": "2021999969340",
+      "deviceSn": "SF4ES099995523"
+	  "SQL_HOST": "192.168.5.140",
+	  "SQL_USER": "someuser",
+	  "SQL_PASSWORD": "passsw",
+	  "SQL_DATABASE": "Some_Base"
+	  
+
+}

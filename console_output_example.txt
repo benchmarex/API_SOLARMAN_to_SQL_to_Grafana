@@ -1,0 +1,24 @@
+C:\Users\Marek\API_SOLARMAN_to_SQL\Scripts\python.exe C:\Users\Marek\PycharmProjects\pythonProject\API_SOLARMAN_to_SQL\main_mysql.py 
+True
+Token OK. API server message:  None
+max voltage  234.6 V
+power 0 W
+energy  32.05  kWh
+temp 30.00 °C
+AC Frequency 49.97 Hz
+Module temperature 11 °C
+Insulation Impedance- Cathode to ground 3014 kΩ
+PV1 Insulation Impedance 1254 kΩ
+PV2 Insulation Impedance 3695 kΩ
+Voltage string1 = 156.60 V, Current DC1 = 0.00 A, POWER DC2 = 0 W
+Voltage string2 = 154.60 V, Current DC2 = 0.00 A, POWER DC2 = 0 W
+Voltage AC1 = 230.00 V, Current AC1 = 0.80 A
+Voltage AC2 = 234.60 V, Current AC2 = 0.80 A
+Voltage AC3 = 233.00 V, Current AC3 = 0.80 A
+2023-02-23 20:33:19
+INSERT INTO Sofar (date, Energy, Power_AC, Inverter_temperature, Voltage_AC1, Voltage_AC2, Voltage_AC3, Current_AC1, Current_AC2, Current_AC3, Power_DC1, Power_DC2, Voltage_DC1, Voltage_DC2, Current_DC1, Current_DC2, Ac_freq, Module_temperature, Insulation_imp_cath_gnd, Insulation_imp_PV1, Insulation_imp_PV2) VALUES
+ 
+('2023-02-23 20:33:19', '32.05','0', '30.00', '230.00', '234.60', '233.00', '0.80','0.80','0.80', '0','0', '156.60','154.60', '0.00', '0.00', '49.97', '11', '3014', '1254', '3695');
+Database version : 10.5.15-MariaDB-0+deb11u1 
+
+Process finished with exit code 0
