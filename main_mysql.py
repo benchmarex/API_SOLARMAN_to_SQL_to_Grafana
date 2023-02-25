@@ -14,6 +14,9 @@ def get_time():
     return (pm_solartime)
 
 def get_token():
+
+    url = 'https://api.solarmanpv.com/'
+
     headers = {"Content-Type": "application/json",
                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"}
 
@@ -21,7 +24,7 @@ def get_token():
     with open("C:\\Users\\Marek\\PycharmProjects\\pythonProject\\config.json") as jsonFile:
     #with open("config.json") as jsonFile:
         jsonObject = json.load(jsonFile)
-        jsonFile.close()
+       # jsonFile.close()
 
     appId = jsonObject['appId']
 
@@ -45,15 +48,18 @@ def read_token_file():
 
     #token =  open('token.txt', 'r')
 
-    token = open("C:\\Users\\Marek\\PycharmProjects\\pythonProject\\token.txt", "r")
-    #try:
-    token = token.read()
-    #finally:
-    #token.close()
+    file = open("C:\\Users\\Marek\\PycharmProjects\\pythonProject\\token.txt", "r")
+    try:
+        token = file.read()
+    finally:
+        file.close()
     return (token)
 
 
 def asking_about_everything():
+
+    url = 'https://api.solarmanpv.com/'
+
     access_token = read_token_file()
     headers1 = {"Authorization": "bearer " + access_token, "Content-Type": "application/json; charset=utf-8",
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"}
@@ -63,25 +69,19 @@ def asking_about_everything():
         jsonObject = json.load(jsonFile)
         jsonFile.close()
 
+
     deviceSn  = jsonObject['deviceSn']
 
 
     appId = jsonObject['appId']
 
     response1 = requests.post(url + "device/v1.0/currentData?appId=" + str(appId) + "&language=en&=", headers=headers1, data='{"deviceSn":'+ '"'+deviceSn+'"}')
-    global r1
-    r1 = response1.json()
 
-    return ()
+    return (response1.json())
 
 ###########################################################
 
-
-global url
-url = 'https://api.solarmanpv.com/'
-
-
-asking_about_everything()
+r1=asking_about_everything()
 
 #checking is token ok?
 
@@ -96,7 +96,7 @@ if valid_token != True:
 print("Token OK. API server message: ", r1.get("msg"))
 # answer from API server, no response meaning is ok
 
-asking_about_everything()
+r1=asking_about_everything()
 
 
 # extracting AC voltages
@@ -199,7 +199,7 @@ print(sql)
 with open("C:\\Users\\Marek\\PycharmProjects\\pythonProject\\config.json") as jsonFile:
     # with open("config.json") as jsonFile:
     jsonObject = json.load(jsonFile)
-    jsonFile.close()
+  # jsonFile.close()
 
 
 SQL_HOST = jsonObject["SQL_HOST"]
