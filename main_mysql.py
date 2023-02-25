@@ -23,12 +23,14 @@ def get_token():
 
     with open("C:\\Users\\Marek\\PycharmProjects\\pythonProject\\config.json") as jsonFile:
     #with open("config.json") as jsonFile:
-        jsonObject = json.load(jsonFile)
-       # jsonFile.close()
+
+
+           jsonObject = json.load(jsonFile)
+
 
     appId = jsonObject['appId']
 
-    data = open('apisol_pv_conf.json', 'r')
+    data = open('C:\\Users\\Marek\\PycharmProjects\\pythonProject\\apisol_pv_conf.json', 'r')
 
     response = requests.post(url + 'account/v1.0/token?appId=' + str(appId) + '&language=en&=', headers=headers,
                              data=data)
