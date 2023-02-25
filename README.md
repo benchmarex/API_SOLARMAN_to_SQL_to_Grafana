@@ -20,18 +20,7 @@ Program żeby działać potrzebuje:
 
 1. Działającego serwera mysql z dodaną  bazą i tabelą 
 
-jak w poniższym zapytaniu. Zapytanie to jest zaczerpnięte z mojego programu i przesyła uzyskane dane do tabeli na serwerze mysql.
-
-
-sql = f"""INSERT INTO Sofar (date, Energy, Power_AC, Inverter_temperature, Voltage_AC1, Voltage_AC2, Voltage_AC3,\n
- Current_AC1, Current_AC2, Current_AC3, Power_DC1, Power_DC2, Voltage_DC1, Voltage_DC2, Current_DC1, Current_DC2, \n
- Ac_freq, Module_temperature, Insulation_imp_cath_gnd, Insulation_imp_PV1, Insulation_imp_PV2) VALUES\n 
- 
-('{DataMysql}', '{energy_kwh}','{acpwr}', '{tinv}', '{acv1}', '{acv2}', '{acv3}', '{acv1_current}','{acv2_current}',\n
-'{acv3_current}', '{dc1_power}','{dc2_power}', '{dc1_voltage}','{dc2_voltage}', '{dc1_current}', '{dc2_current}', \n
-'{ac_freq}', '{module_temperature}', '{insulation_imp_cath_gnd}', '{insulation_imp_PV1}', '{insulation_imp_PV2}');"""
-
-Prawdopodobnie jest możliwe wygenerowanie tabeli z mojego panelu phpmadmin 
+Tabela bez danych znajduje sie wpliku Sofar_Base.sql można ją na gotowo wczytać  opcją import w phpmyadmin.
 
 
 2. Posiadania konta na Solarman.COM  z dostepem do usług API. Należy zawnioskować do administracji serwera o nadanie takiego dostępu. Otrzymamy wtedy dokunetacje api oraz dane niezbedne do logowania sie na serwer za pomoca API. 
@@ -63,18 +52,7 @@ To run the program needs:
 
 1. A working mysql server with added database and table
 
-as in the query below. This query is taken from my program and sends the obtained data to a table on mysql server.
-
-
-sql = f"""INSERT INTO Sofar (date, Energy, Power_AC, Inverter_temperature, Voltage_AC1, Voltage_AC2, Voltage_AC3,\n
- Current_AC1, Current_AC2, Current_AC3, Power_DC1, Power_DC2, Voltage_DC1, Voltage_DC2, Current_DC1, Current_DC2, \n
- Ac_freq, Module_temperature, Insulation_imp_cath_gnd, Insulation_imp_PV1, Insulation_imp_PV2) VALUES\n 
- 
-('{DataMysql}', '{energy_kwh}','{acpwr}', '{tinv}', '{acv1}', '{acv2}', '{acv3}', '{acv1_current}','{acv2_current}',\n
-'{acv3_current}', '{dc1_power}','{dc2_power}', '{dc1_voltage}','{dc2_voltage}', '{dc1_current}', '{dc2_current}', \n
-'{ac_freq}', '{module_temperature}', '{insulation_imp_cath_gnd}', '{insulation_imp_PV1}', '{insulation_imp_PV2}');"""
-
-It's probably possible to generate a table from my phpmadmin panel
+The table without data is in the Sofar_Base.sql file, you can load it with the import option in phpmyadmin.
 
 
 2. Having an account on Solarman.COM with access to API services. You should apply to the server administration to grant such access. Then we will receive api documentation and data necessary to log on to the server using the API.
