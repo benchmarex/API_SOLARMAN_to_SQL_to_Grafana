@@ -1,0 +1,250 @@
+#example response from solarman
+
+[
+  {
+    "key": "SN1",
+    "value": "SF4ES010L95523",
+    "unit": null,
+    "name": "SN"
+  },
+  {
+    "key": "SS_CY1",
+    "value": "22",
+    "unit": null,
+    "name": "Production Compliance Country"
+  },
+  {
+    "key": "MODEi1",
+    "value": "1",
+    "unit": null,
+    "name": "Input Mode"
+  },
+  {
+    "key": "HWv1",
+    "value": "V100",
+    "unit": null,
+    "name": "Hardware Version"
+  },
+  {
+    "key": "SWmai_v1",
+    "value": "V240",
+    "unit": null,
+    "name": "Software Master Version"
+  },
+  {
+    "key": "DSPv1",
+    "value": "V240",
+    "unit": null,
+    "name": "DSP Version"
+  },
+  {
+    "key": "DSPv2",
+    "value": "V240",
+    "unit": null,
+    "name": "Vice DSP Version"
+  },
+  {
+    "key": "FUSE_V",
+    "value": "�",
+    "unit": null,
+    "name": "FUSE Version"
+  },
+  {
+    "key": "DV1",
+    "value": "166.50",
+    "unit": "V",
+    "name": "DC Voltage PV1"
+  },
+  {
+    "key": "DV2",
+    "value": "184.30",
+    "unit": "V",
+    "name": "DC Voltage PV2"
+  },
+  {
+    "key": "DC1",
+    "value": "0.00",
+    "unit": "A",
+    "name": "DC Current PV1"
+  },
+  {
+    "key": "DC2",
+    "value": "0.00",
+    "unit": "A",
+    "name": "DC Current PV2"
+  },
+  {
+    "key": "DP1",
+    "value": "0",
+    "unit": "W",
+    "name": "DC Power PV1"
+  },
+  {
+    "key": "DP2",
+    "value": "0",
+    "unit": "W",
+    "name": "DC Power PV2"
+  },
+  {
+    "key": "AV1",
+    "value": "233.70",
+    "unit": "V",
+    "name": "AC Voltage R/U/A"
+  },
+  {
+    "key": "AV2",
+    "value": "235.30",
+    "unit": "V",
+    "name": "AC Voltage S/V/B"
+  },
+  {
+    "key": "AV3",
+    "value": "235.20",
+    "unit": "V",
+    "name": "AC Voltage T/W/C"
+  },
+  {
+    "key": "AC1",
+    "value": "0.80",
+    "unit": "A",
+    "name": "AC Current R/U/A"
+  },
+  {
+    "key": "AC2",
+    "value": "0.80",
+    "unit": "A",
+    "name": "AC Current S/V/B"
+  },
+  {
+    "key": "AC3",
+    "value": "0.80",
+    "unit": "A",
+    "name": "AC Current T/W/C"
+  },
+  {
+    "key": "A_Fo1",
+    "value": "49.97",
+    "unit": "Hz",
+    "name": "AC Output Frequency R"
+  },
+  {
+    "key": "APo_t1",
+    "value": "0",
+    "unit": "W",
+    "name": "Total AC Output Power (Active)"
+  },
+  {
+    "key": "Et_ge0",
+    "value": "21640.00",
+    "unit": "kWh",
+    "name": "Cumulative Production (Active)"
+  },
+  {
+    "key": "Etdy_ge1",
+    "value": "37.73",
+    "unit": "kWh",
+    "name": "Daily Production (Active)"
+  },
+  {
+    "key": "ST_PG1",
+    "value": "Static",
+    "unit": null,
+    "name": "Grid Status"
+  },
+  {
+    "key": "PG_Pt1",
+    "value": "0.00",
+    "unit": "W",
+    "name": "Total Grid Power"
+  },
+  {
+    "key": "E_Puse_t1",
+    "value": "0.0",
+    "unit": "W",
+    "name": "Total Consumption Power"
+  },
+  {
+    "key": "INV_T0",
+    "value": "32.00",
+    "unit": "℃",
+    "name": "Temperature- Inverter"
+  },
+  {
+    "key": "T_MDU1",
+    "value": "14",
+    "unit": "℃",
+    "name": "Module temperature1"
+  },
+  {
+    "key": "SYSTIM1",
+    "value": "23-02-14 17:20:00",
+    "unit": null,
+    "name": "System Time"
+  },
+  {
+    "key": "t_w_hou1",
+    "value": "8639",
+    "unit": "h",
+    "name": "Total Running Hour"
+  },
+  {
+    "key": "CD_TIM1",
+    "value": "60",
+    "unit": "s",
+    "name": "Countdown Time"
+  },
+  {
+    "key": "Bus_V1",
+    "value": "600.00",
+    "unit": "V",
+    "name": "Bus Voltage"
+  },
+  {
+    "key": "Dcp1",
+    "value": "1000",
+    "unit": null,
+    "name": "DC Component- Phase A"
+  },
+  {
+    "key": "Dcp2",
+    "value": "999",
+    "unit": null,
+    "name": "DC Component- Phase B"
+  },
+  {
+    "key": "Dcp3",
+    "value": "996",
+    "unit": null,
+    "name": "DC Component- Phase C"
+  },
+  {
+    "key": "EAR_N_Ineg1",
+    "value": "2951",
+    "unit": "KΩ",
+    "name": "Insulation Impedance- Cathode to ground"
+  },
+  {
+    "key": "CT_P1",
+    "value": "0.00",
+    "unit": "W",
+    "name": "CT Power"
+  },
+  {
+    "key": "INV_ST1",
+    "value": "In operation",
+    "unit": null,
+    "name": "Inverter status"
+  },
+  {
+    "key": "N_I1",
+    "value": "390",
+    "unit": "KΩ",
+    "name": "PV1 Insulation Impedance"
+  },
+  {
+    "key": "N_I2",
+    "value": "3180",
+    "unit": "KΩ",
+    "name": "PV2 Insulation Impedance"
+  }
+]
