@@ -1,3 +1,18 @@
+'''
+
+Author Marek Pikulslki 02.2023.
+benchmarek[at]outlook[dot]com
+https://github.com/benchmarex/API_SOLARMAN_to_SQL_to_Grafana
+
+It is a project that downloads data on the production and operating parameters of the photovoltaic system sent from the
+SofarSolar inverter to the solarman.com server using the API interface.
+The data is sent to the local mysql server.
+The script is written in Python and invoked using the cron mechanism at intervals of 5 minutes.
+
+
+'''
+
+
 
 import datetime
 import requests
